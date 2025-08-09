@@ -143,8 +143,8 @@ inst_cert(){
         openssl req -new -x509 -days 36500 -key /etc/hysteria/private.key -out /etc/hysteria/cert.crt -subj "/CN=www.bing.com"
         chmod 777 /etc/hysteria/cert.crt
         chmod 777 /etc/hysteria/private.key
-        hy_domain="www.bing.com"
-        domain="www.bing.com"
+        hy_domain="www.google.com"
+        domain="www.google.com"
     fi
 }
 
@@ -247,10 +247,10 @@ tls:
   key: $key_path
 
 quic:
-  initStreamReceiveWindow: 16777216
-  maxStreamReceiveWindow: 16777216
-  initConnReceiveWindow: 33554432
-  maxConnReceiveWindow: 33554432
+  initStreamReceiveWindow: 8388608 
+  maxStreamReceiveWindow: 8388608 
+  initConnReceiveWindow: 20971520 
+  maxConnReceiveWindow: 20971520 
 
 auth:
   type: password
@@ -288,10 +288,10 @@ tls:
   insecure: true
 
 quic:
-  initStreamReceiveWindow: 16777216
-  maxStreamReceiveWindow: 16777216
-  initConnReceiveWindow: 33554432
-  maxConnReceiveWindow: 33554432
+  initStreamReceiveWindow: 8388608 
+  maxStreamReceiveWindow: 8388608 
+  initConnReceiveWindow: 20971520 
+  maxConnReceiveWindow: 20971520 
 
 fastOpen: true
 
@@ -311,10 +311,10 @@ EOF
     "insecure": true
   },
   "quic": {
-    "initStreamReceiveWindow": 16777216,
-    "maxStreamReceiveWindow": 16777216,
-    "initConnReceiveWindow": 33554432,
-    "maxConnReceiveWindow": 33554432
+    "initStreamReceiveWindow": 8388608,
+    "maxStreamReceiveWindow": 8388608,
+    "initConnReceiveWindow": 20971520,
+    "maxConnReceiveWindow": 20971520
   },
   "socks5": {
     "listen": "127.0.0.1:5678"
